@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  min-height: 100%;
+}
+
+body {
+  padding: 1rem;
+  margin: 0;
+  height: 100%;
+}
+
+.btn {
+  background-color: #fff;
+  border: 1px solid #000;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 0.3s linear;
+  &:hover {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+}

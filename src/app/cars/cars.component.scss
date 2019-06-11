@@ -1,0 +1,65 @@
+.car {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 4px;
+  &__name {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    &:active {
+      color: #333;
+      text-decoration: none;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__icon {
+    cursor: pointer;
+    padding: 0 1rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.cars {
+  &-wrapper {
+    max-width: 450px;
+    margin: auto;
+  }
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    span {
+      font-size: 14px;
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 5px;
+    }
+    input {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #000;
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.cars-list {
+  padding: 0;
+  list-style: none;
+  max-width: 450px;
+  margin-top: 15px;
+  &__item {
+    margin-bottom: 15px;
+  }
+}

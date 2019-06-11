@@ -1,0 +1,47 @@
+<div class="cars-wrapper">
+  <h1>{{title}}</h1>
+
+  <div class="cars">
+    <label class="cars__item">
+      <span>Car name:</span>
+      <input type="text" class="form-control"
+             [(ngModel)]="carName">
+    </label>
+    <label class="cars__item">
+      <span>Car color(green, red, blue, etc...):</span>
+      <input type="text" class="form-control"
+             [(ngModel)]="carColor">
+    </label>
+
+    <!--<button class="btn cars-show" (click)="loadCars()">Показать список автомобилей</button>-->
+
+    <button class="btn car-add" (click)="addCar()">Add car</button>
+    <ul class="cars-list">
+      <li class="cars-list__item"
+          *ngFor="let car of cars; let idx = index">
+        <div class="car" [ngStyle]="{borderLeft: '4px solid ' + car.color}">
+          <a
+            [routerLink]="['/cars', car.id, car.name]" class="car__name"
+            [queryParams]="{color: car.color}"
+            fragment="picture"
+          >{{idx+1}}. {{car.name}}</a>
+          <div class="car-actions">
+          <span class="car__icon car__icon_edit" (click)="editCar(car)">
+            <i class="far fa-edit"></i>
+          </span>
+            <span class="car__icon car__icon_delete" (click)="deleteCar(car)">
+            <i class="fas fa-trash-alt"></i>
+          </span>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="cars-change">
+      <app-edit-car
+        [carSelected]="carSelected"
+        (carChange)="newUpdateCar($event)"
+        *ngIf="modalFlag"></app-edit-car>
+    </div>
+
+  </div>
+</div>
